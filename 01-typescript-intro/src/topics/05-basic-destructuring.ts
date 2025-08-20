@@ -20,6 +20,8 @@ const audioPlayer: AudioPlayer = {
     }
 }
 
+
+//DESESTRUCTURACION EN OBJETOS
 //desestructuracion consiste en tomar ciertas piezas que me interesan
 
 //es incomodo 
@@ -55,6 +57,8 @@ console.log('Song:', anotherSong);
 console.log(author); */
 
 
+
+//DESESTRUCTURACION EN ARREGLOS
 const dbz:string[]=['Goku', 'Vegeta', 'Trunk'];
 const trunks =  dbz[3] || 'No hay personaje';
 
