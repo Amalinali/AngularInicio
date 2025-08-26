@@ -25,22 +25,23 @@ const audioPlayer: AudioPlayer = {
 //desestructuracion consiste en tomar ciertas piezas que me interesan
 
 //es incomodo 
-/* console.log('Song: ', audioPlayer.song); */
-/* console.log('Duration: ', audioPlayer.songDuration); */
+console.log('Song: ', audioPlayer.song); 
+console.log('Duration: ', audioPlayer.songDuration); 
 
 
 const song = 'New Song';
 
 //se puede hacer de esta forma la desestructuracion del objeto interno,
+/*
+const {
+    song:anotherSong, 
+    songDuration:duration,
+    details: {
+        author
+    }
+} = audioPlayer;
 
-//const {
-//    song:anotherSong, 
-//    songDuration:duration,
-//    details: {
-//        author
-//    }
-//} = audioPlayer;
-
+*/
 //o se puede hacer aparte
 const {
     song:anotherSong, 
@@ -50,17 +51,20 @@ const {
 
 const {author} = details;
 
-/* console.log('Song:', song);
+console.log('Song:', song);
 console.log('Song:', duration);
 console.log('Song:', anotherSong);
 
-console.log(author); */
+console.log(author); 
+
+
+
 
 
 
 //DESESTRUCTURACION EN ARREGLOS
-const dbz:string[]=['Goku', 'Vegeta', 'Trunk'];
-const trunks =  dbz[3] || 'No hay personaje';
+const [, , , trunks = 'Not found']:string[]=['Goku', 'Vegeta', 'Trunk'];
+//const trunks =  dbz[3] || 'No hay personaje';
 
 console.error('Personaje 3:', trunks);
 
