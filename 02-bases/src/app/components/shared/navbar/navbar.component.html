@@ -1,0 +1,22 @@
+<style>
+  nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #212121;
+    color: white;
+    padding: 10px;
+  }
+
+  nav a{
+    color: white;
+    text-decoration: none;
+  }
+</style>
+
+<nav>
+  <!-- ESTE POR DEFECTO ASIGNA A UN STRING -->
+  <a routerLink="/" routerLinkActive="active">Contador</a>
+
+  <!-- HAY QUE COLOCAR COMILLAS SIMPLE PARA QUE LEA -->
+  <a [routerLink]="['/hero']"  [routerLinkActive]="'active'">Hero</a>
+</nav>
