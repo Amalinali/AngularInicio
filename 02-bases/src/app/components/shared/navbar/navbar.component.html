@@ -11,12 +11,20 @@
     color: white;
     text-decoration: none;
   }
+
+  nav a.active{
+    color: red;
+  }
 </style>
 
 <nav>
   <!-- ESTE POR DEFECTO ASIGNA A UN STRING -->
-  <a routerLink="/" routerLinkActive="active">Contador</a>
+  <a routerLink="/" routerLinkActive="active"
+  [routerLinkActiveOptions]="{exact: true}">Contador</a>
 
   <!-- HAY QUE COLOCAR COMILLAS SIMPLE PARA QUE LEA -->
   <a [routerLink]="['/hero']"  [routerLinkActive]="'active'">Hero</a>
+
+  <!-- HAY QUE COLOCAR COMILLAS SIMPLE PARA QUE LEA -->
+  <a [routerLink]="['/dragon']"  [routerLinkActive]="'active'">Dragon Ball</a>
 </nav>
