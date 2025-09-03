@@ -6,59 +6,19 @@
 
   <div class="col-12 col-sm-6">
 
-    <h3> Agregar: {{ name() }}</h3>
-    <input
-    type="text"
-    class="form-control"
-    placeholder="Nombre"
-    [value]="name()"
-    (input)="name.set(txtName.value)"
-    #txtName
-    >
+  <!-- Valo -->
+    <dragonball-character-add
+    (newCharacter)="$event"
+    />
 
-
-    <!-- <h3> Agregar: {{ power() }}</h3> -->
-    <input
-    type="number"
-    class="form-control mt-2"
-    placeholder="Poder"
-    [value]="power()"
-    (input)="power.set(+txtPower.value)"
-    #txtPower
-    >
-    <!-- Referencia local el #txt-->
-
-    <button (click)="addCharacter()" class="mt-2 btn btn-primary">
-      Agregar
-    </button>
   </div>
 
   <div class="col-12 col-sm-6">
-    <h3>Listado</h3>
-    <ul>
-      @for (character of characters(); track character.id; let idx = $index) {
+  <!-- pasamos el arreglo de personajes asi -->
+    <dragonball-character-list
+    listName="Listado de personajes"
+    [characters]="characters()" />
 
-        @if( character.power > 500){
-          <li>
-            <span>{{idx + 1}} - {{character.name}}</span>
-            <!-- Condicion tradicional -->
-            <strong
-              [class.text-danger]="character.power > 9000"
-              [class.text-danger]="character.power < 9000"
-              >
-               ({{character.power}})
-              </strong>
-          </li>
-        } @else {
-          <li><strong>
-            Aqui no hay nada
-          </strong></li>
-        }
-
-
-      }
-
-    </ul>
   </div>
 
 </section>
